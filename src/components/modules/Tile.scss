@@ -1,0 +1,115 @@
+// 1.61
+
+
+
+$width: 10vw;
+
+.clickable {
+    cursor: pointer;
+    :hover {
+        border: 1px solid green;
+    }
+    *:hover {
+        border: none;
+    }
+}
+
+.tile-container {
+    width: $width;
+    height: .95*$width;
+    background: black;
+    position: relative;
+    border: 1px solid black;
+    border-radius: 1px;
+    margin: 1px;
+    .content-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        .template {
+            position: relative;
+            width: 100%;
+            margin: 0 auto;        
+        }
+        .card-title {
+            // font-family: DomFont;
+            text-align: center;
+            font-size: .0863*$width;
+            font-weight: 900;
+            margin-top: .058*$width;
+        } 
+        .card-count {
+            width: 20%;
+            font-size: .11*$width;
+            font-weight: 900;
+            color: white;
+            background: #ee0000;
+            border: .0222*$width solid #ee0000;
+            border-radius: .02444*$width;
+            text-shadow: 0px 0px 1px black;
+
+            // width: 20%;
+            // font-size: .1263*$width;
+            // font-weight: 900;
+            // color: white;
+            // background: red;
+            // border: 1px solid red;
+            // border-radius: 1px;
+            margin: 0;
+            text-align: center;
+            padding: 0;
+        }
+    }
+    .coin-container {
+        position: absolute;
+        top: 80%;
+        left: 0;
+        width: 20%;
+    }
+
+    .picture {
+        position: relative;
+        display: block;
+        width: 96%;
+        margin: 0 auto;
+        top: 11%;
+    }
+}
+
+.coin-subcontainer {
+    position: absolute;
+    width: 100%;
+    .coin {
+        width: 100%;
+        position: absolute;
+    }
+}
+
+.tile-container.small-tile {
+    @if $width==10vw {
+        $width: 6vw;
+        width: $width;
+        height: .95*$width;
+        .card-title {
+            font-size: .0863*$width;
+            margin-top: .058*$width;
+        }
+        .card-count {
+            font-size: .11*$width;
+            border: .0222*$width solid #ee0000;
+            border-radius: .02444*$width;
+        }
+        .coin-value {
+            font-size: .14*$width;
+        }
+    }
+    
+}
+
+.tile-container.done {
+    .picture {
+        width: 40%;
+        top: 25%;   
+    }
+}

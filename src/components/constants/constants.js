@@ -1,0 +1,86 @@
+export const victories = ['estate', 'duchy',  'province', 
+'gardens', 'harem', 'duke', 'mill', 'nobles'
+]
+export const treasures = ['copper', 'silver', 'gold', 'harem']
+export const actions = ['cellar', 'chapel', 'moat', 'harbinger', 'merchant', 'vassal', 'village', 'workshop', 'bureaucrat', 'militia', 'moneylender', 'poacher', 'remodel', 'smithy', 'throne-room', 'bandit', 'council-room', 
+'festival', 'laboratory', 'library', 'market', 'mine', 'sentry', 'witch', 'artisan',
+'courtyard', 'lurker', 'pawn', 'masquerade', 'shanty-town', 'steward', 'swindler',
+'wishing-well', 'baron', 'bridge', 'conspirator', 'diplomat', 'ironworks', 'mill',
+'mining-village', 'secret-passage', 'courtier', 'minion', 'patrol', 'replace',
+'torturer', 'trading-post', 'upgrade', 'nobles']
+export const bigcards = ['cellar', 'chapel', 'moat', 'harbinger', 'merchant', 'vassal', 'village', 'workshop', 'bureaucrat', 'gardens', 'militia', 'moneylender', 'poacher', 'remodel', 'smithy', 'throne-room', 'bandit', 'council-room', 
+'festival', 'laboratory', 'library', 'market', 'mine', 'sentry', 'witch', 'artisan',
+'courtyard', 'lurker', 'pawn', 'masquerade', 'shanty-town', 'steward', 'swindler',
+'wishing-well', 'baron', 'bridge', 'conspirator', 'diplomat', 'ironworks', 'mill',
+'mining-village', 'secret-passage', 'courtier', 'duke', 'minion', 'patrol', 'replace',
+'torturer', 'trading-post', 'upgrade', 'harem', 'nobles', 'copper', 'curse', 'estate',
+'silver', 'duchy',  'gold', 'province' ]
+
+export const prices = [2,2,2,3,3,3,3,3,4,4,4,4,4,4,4,4,5,5,
+5,5,5,5,5,5,5,6,
+2,2,2,3,3,3,3,
+3,4,4,4,4,4,4,
+4,4,5,5,5,5,5,
+5,5,5,6,6,0,0,2,
+3,5,6,8]
+
+export const sidecards = ['province', 'gold', 'duchy', 'silver', 'estate', 'copper', 'curse']
+export const sidecardPrices = [8,6,5,3,2,0,0]
+export const attackCards = ['bureaucrat','militia','bandit','witch','swindler','minion','replace','torturer']
+export const reactCards = ['moat','diplomat']
+
+export const descriptions = [
+    {name: "cellar", a:1,b:0,c:0,o:0, desc:"Discard any number of cards, then draw that many."},
+    {name: "chapel", a:0,b:0,c:0,o:0, desc:"Trash up to 4 cards from your hand."},
+    {name: "moat", a:0,b:0,c:0,o:0, desc:"When another player plays an Attack card, you may first reveal this from your hand, to be unaffected by it."},
+    {name: "harbinger", a:1,b:0,c:1,o:0, desc:"Look through your discard pile. You may put a card from it onto your deck."},
+    {name: "merchant", a:1,b:0,c:1,o:0, desc:"The first time you play a Silver this turn, +$1"},
+    {name: "vassal", a:0,b:0,c:0,o:2, desc:"Discard the top card of your deck. If it's an Action card, you may play it."},
+    {name: "village", a:2,b:0,c:1,o:0, desc:""},
+    {name: "workshop", a:0,b:0,c:0,o:0, desc:"Gain a card costing up to $4."},
+    {name: "bureaucrat", a:0,b:0,c:0,o:0, desc:"Gain a Silver onto your deck. Each other player reveals a Victory card from their hand and puts it onto their deck (or reveals a hand with no Victory cards)."},
+    {name: "gardens", a:0,b:0,c:0,o:0, desc:"Worth 1VP per 10 cards you have (round down)."},
+    {name: "militia", a:0,b:0,c:0,o:2, desc:"Each other player discards down to 3 cards in hand."},
+    {name: "moneylender", a:0,b:0,c:0,o:0, desc:"You may trash a Copper from your hand for +$3."},
+    {name: "poacher", a:1,b:0,c:1,o:1, desc:"Discard a card per empty Supply pile."},
+    {name: "remodel", a:0,b:0,c:0,o:0, desc:"Trash a card from your hand. Gain a card costing up to $2 more than it."},
+    {name: "smithy", a:0,b:0,c:3,o:0, desc:""},
+    {name: "throne-room", a:0,b:0,c:0,o:0, desc:"You may play an Action card from your hand twice."},
+    {name: "bandit", a:0,b:0,c:0,o:0, desc:"Gain a Gold. Each other player reveals the top 2 cards of their deck, trashes a revealed Treasure other than Copper, and discards the rest."},
+    {name: "council-room", a:0,b:1,c:4,o:0, desc:"Each other player draws a card."},
+    {name: "festival", a:2,b:1,c:0,o:2, desc:""},
+    {name: "laboratory", a:1,b:0,c:2,o:0, desc:""},
+    {name: "library", a:0,b:0,c:0,o:0, desc:"Draw until you have 7 cards in hand, skipping any Action cards you choose to; set those aside, discarding them afterwards."},
+    {name: "market", a:1,b:1,c:1,o:1, desc:""},
+    {name: "mine", a:0,b:0,c:0,o:0, desc:"You may trash a Treasure card from your hand. Gain a Treasure card to your hand costing up to $3 more than it."},
+    {name: "sentry", a:1,b:0,c:1,o:0, desc:"Look at the top 2 cards of your deck. Trash and/or discard any number of them. Put the rest back on top in any order."},
+    {name: "witch", a:0,b:0,c:2,o:0, desc:"Each other player gains a Curse."},
+    {name: "artisan", a:0,b:0,c:0,o:0, desc:"Gain a card to your hand costing up to $5. Put a card from your hand onto your deck."},
+    {name: "courtyard", a:0,b:0,c:3,o:0, desc:"Put a card from your hand onto your deck"},
+    {name: "lurker", a:1,b:0,c:0,o:0, desc:"Choose one: Trash an Action card from the Supply; or gain an Action card from the trash."},
+    {name: "pawn", a:0,b:0,c:0,o:0, desc:"Choose two: +1 Card; +1 Action; +1 Buy; +$1. The choices must be different."},
+    {name: "masquerade", a:0,b:0,c:2,o:0, desc:"Each player with any cards in hand passes one to the next such player to their left, at once. Then you may trash a card from your hand."},
+    {name: "shanty-town", a:2,b:0,c:0,o:0, desc:"Reveal your hand. If you have no Action cards in hand, +2 Cards."},
+    {name: "steward", a:0,b:0,c:0,o:0, desc:"Choose one: +2 Cards; or +$2; or trash 2 cards from your hand."},
+    {name: "swindler", a:0,b:0,c:0,o:2, desc:"Each other player trashes the top card of their deck and gains a card with the same cost that you choose."},
+    {name: "wishing-well", a:1,b:0,c:1,o:0, desc:"Name a card, then reveal the top card of your deck. If you named it, put it into your hand."},
+    {name: "baron", a:0,b:1,c:0,o:0, desc:"You may discard an Estate for +$4. If you don't, gain an Estate."},
+    {name: "bridge", a:0,b:1,c:0,o:1, desc:"This turn, cards (everywhere) cost $1 less, but not less than $0."},
+    {name: "conspirator", a:0,b:0,c:0,o:2, desc:"If you’ve played 3 or more Actions this turn (counting this), +1 Card and +1 Action."},
+    {name: "diplomat", a:0,b:0,c:2,o:0, desc:"If you have 5 or fewer cards in hand (after drawing), +2 Actions. When another player plays an Attack card, you may first reveal this from a hand of 5 or more cards, to draw 2 cards then discard 3."},
+    {name: "ironworks", a:0,b:0,c:0,o:0, desc:"Gain a card costing up to $4. If the gained card is an Action card, +1 Action; Treasure card, +$1; Victory card, +1 Card"},
+    {name: "mill", a:1,b:0,c:1,o:0, desc:"You may discard 2 cards, for +$2"},
+    {name: "mining-village", a:2,b:0,c:1,o:0, desc:"You may trash this for +$2."},
+    {name: "secret-passage", a:1,b:0,c:2,o:0, desc:"Take a card from your hand and put it anywhere in your deck"},
+    {name: "courtier", a:0,b:0,c:0,o:0, desc:"Reveal a card from your hand. For each type it has (Action, Attack, etc.), choose one: +1 Action; or +1 Buy; or +$3; or gain a Gold. The choices must be different."},
+    {name: "duke", a:0,b:0,c:0,o:0, desc:"Worth 1VP per Duchy you have."},
+    {name: "minion", a:1,b:0,c:0,o:0, desc:"Choose one: +$2; or discard your hand, +4 Cards, and each other player with at least 5 cards in hand discards their hand and draws 4 cards."},
+    {name: "patrol", a:0,b:0,c:3,o:0, desc:"Reveal the top 4 cards of your deck. Put the Victory cards and Curses into your hand. Put the rest back in any order."},
+    {name: "replace", a:0,b:0,c:0,o:0, desc:"Trash a card from your hand. Gain a card costing up to $2 more than it. If the gained card is an Action or Treasure, put it onto your deck; if it's a Victory card, each other player gains a Curse."},
+    {name: "torturer", a:0,b:0,c:3,o:0, desc:"Each other player either discards 2 cards or gains a Curse to their hand, their choice. (They may pick an option they can't do.)"},
+    {name: "trading-post", a:0,b:0,c:0,o:0, desc:"Trash 2 cards from your hand. If you did, gain a Silver to your hand."},
+    {name: "upgrade", a:1,b:0,c:1,o:0, desc:"Trash a card from your hand. Gain a card costing exactly $1 more than it."},
+    {name: "harem", a:0,b:0,c:0,o:0, desc:""},
+    {name: "nobles", a:0,b:0,c:0,o:0, desc:"Choose one: +3 Cards; or +2 Actions"},
+]
+// import {victories,treasures,actions,bigcards,prices,sidecards,sidecardPrices,attackCards,reactCards}

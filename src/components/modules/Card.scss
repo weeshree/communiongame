@@ -1,0 +1,372 @@
+// 1.61
+
+@font-face {
+    font-family: DomFont;
+    src: url("/fonts/TrajanPro-Bold.otf") format("opentype");
+}
+
+
+
+$width: 16vh;//9vw;
+
+.card-container.clickable {
+    cursor: pointer;
+    box-shadow: 0 0 30px 3px #33d3d9;
+}
+
+.card-container.clickable:hover .template{
+    border: 3px solid green;
+    box-shadow: none;
+}
+
+.card-container.clickable:hover {
+    // z-index: 1;
+}
+
+.card-container.clickable.highlighted {
+    box-shadow: none;
+    .template {
+        border: 3px solid red;
+    }
+}
+
+.card-container.clickable.highlighted:hover .template {
+    border: 3px solid red;
+    box-shadow: none;
+}
+
+
+.card-container {
+    width: $width;
+    height: 1.57*$width;
+    border: 1px solid black;
+    background: black;
+    position: absolute;
+    border-radius: 1px;
+    margin: 1px;
+    .clickcount {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 16/9*2.5/9*$width;
+        height: 16/9*2.5/9*$width;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        background-color:#bb0050;
+        text-align: center;
+        font-size: 3.6vh;
+        border: 3.6vh solid black;
+        color: white;
+    }
+    .content-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        .template {
+            position: relative;
+            width: 100%;
+            margin: 0 auto;        
+        }
+        .card-title {
+            font-family: DomFont;
+            text-align: center;
+            font-size: .0863*$width;
+            margin-top: .058*$width;
+        } 
+
+    }
+    .bottom-container {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        .card-type {
+            font-family: DomFont;
+            text-align: center;
+            font-size: 1.08/1.38*.0863*$width;
+            margin-bottom: .528/.928*.058*$width;
+        }
+    }
+    .desc-container {
+        position: absolute;
+        top: 56%;
+        width: 90%;
+        margin: 0 5%;
+        font-family: 'Times New Roman', Times, serif;
+        p {
+            font-size: 1.2/.8*.05*$width;
+            width:100%;
+            text-align: center;
+            margin: 0;
+        }
+        p.bolded {
+            font-size: .0863*$width;
+            width:100%;
+            text-align: center;
+            font-weight: 700;
+            margin: 0;
+            .coin-span {
+                width: .0863*$width;
+                img {
+                    width: .0863*$width;
+                }
+            }
+        }
+
+        p.big-bolded {
+            font-size: .1163*$width;
+            width: 100%;
+            text-align: center;
+            font-weight: 700;
+            margin: 0;
+            .vic-span {
+                width: .1163*$width;
+                img {
+                    width: .1163*$width;
+                }
+            }
+        }
+    }
+    
+    .coin-container {
+        position: absolute;
+        top: 88%;
+        left: 0;
+        width: 20%;
+        .coin-subcontainer {
+            position: absolute;
+            width: 100%;
+            .coin {
+                width: 100%;
+                position: absolute;
+            }
+        }
+    }
+    .content-container.cardcount-container {
+        z-index: 2;
+        .card-count {
+            font-family: serif;
+            width: 20%;
+            font-size: .17*$width;
+            font-weight: 900;
+            color: white;
+            background: #ee0000;
+            border: .0222*$width solid #ee0000;
+            border-radius: .04444*$width;
+            text-shadow: 0px 0px 1px black;
+            margin: 0;
+            text-align: center;
+            padding: 0;
+        }
+    }
+    .picture {
+        position: relative;
+        display: block;
+        width: 96%;
+        margin: 0 auto;
+        top: .19*$width;
+    }
+}
+
+.card-container.relative {
+    position: relative;
+}
+.card-container.empty {
+    background-color: transparent;
+}
+
+.card-container.small-card {
+    @if $width!=6vw {
+        $width:6vw;
+        width: $width;
+        height: 1.57*$width;
+        position: relative;
+        .content-container .card-title {
+            font-size: .0863*$width;
+            margin-top: .058*$width;
+        }
+        .clickcount {
+            width: 16/9*2.5/9*$width;
+            height: 16/9*2.5/9*$width;
+            font-size: 2vw;
+            border: 2vw solid black;
+        }
+        .desc-container {
+            p {
+                font-size: 1.2/.8*.05*$width;
+            }
+            p.bolded {
+                font-size: .0863*$width;
+                .coin-span {
+                    width: .0863*$width;
+                    img {
+                        width: .0863*$width;
+                    }
+                }
+            }
+            p.big-bolded {
+                font-size: .1163*$width;
+                width: 100%;
+                text-align: center;
+                font-weight: 700;
+                margin: 0;
+                .vic-span {
+                    width: .1163*$width;
+                    img {
+                        width: .1163*$width;
+                    }
+                }
+            }
+        }
+        .bottom-container {
+            .card-type {
+                font-size: 1.08/1.38*.0863*$width;
+                margin-bottom: .528/.928*.058*$width;
+            }
+        }
+        .content-container.cardcount-container .card-count 
+        {
+            font-size: .17*$width;
+            border: .0222*$width solid #ee0000;
+            border-radius: .04444*$width;
+        }
+        .coin-value {
+            font-size: .14*$width;
+        }
+        .picture {
+            top: .19*$width;
+        }
+    }
+}
+.card-container.medium-card{
+    @if $width!=11vh {
+        $width:11vh;
+        width: $width;
+        height: 1.57*$width;
+        // position: relative;
+        .content-container .card-title {
+            font-size: .0863*$width;
+            margin-top: .058*$width;
+        }
+        .clickcount {
+            width: 16/9*2.5/9*$width;
+            height: 16/9*2.5/9*$width;
+            font-size: 3.6vh;
+            border: 3.6vh solid black;
+        }
+        .desc-container {
+            p {
+                font-size: 1.2/.8*.05*$width;
+            }
+            p.bolded {
+                font-size: .0863*$width;
+                .coin-span {
+                    width: .0863*$width;
+                    img {
+                        width: .0863*$width;
+                    }
+                }
+            }
+            p.big-bolded {
+                font-size: .1163*$width;
+                width: 100%;
+                text-align: center;
+                font-weight: 700;
+                margin: 0;
+                .vic-span {
+                    width: .1163*$width;
+                    img {
+                        width: .1163*$width;
+                    }
+                }
+            }
+        }
+        .bottom-container {
+            .card-type {
+                font-size: 1.08/1.38*.0863*$width;
+                margin-bottom: .528/.928*.058*$width;
+            }
+        }
+        .content-container.cardcount-container .card-count 
+        {
+            font-size: .17*$width;
+            border: .0222*$width solid #ee0000;
+            border-radius: .04444*$width;
+        }
+        .coin-value {
+            font-size: .14*$width;
+        }
+        .picture {
+            top: .19*$width;
+        }
+    }
+}
+.card-container.relative {
+    @if $width!=14vh {
+        $width:14vh;
+        width: $width;
+        height: 1.57*$width;
+        position: relative;
+        .content-container .card-title {
+            font-size: .0863*$width;
+            margin-top: .058*$width;
+        }
+        .clickcount {
+            width: 16/9*2.5/9*$width;
+            height: 16/9*2.5/9*$width;
+            font-size: 3.6vh;
+            border: 3.6vh solid black;
+        }
+        .desc-container {
+            p {
+                font-size: 1.2/.8*.05*$width;
+            }
+            p.bolded {
+                font-size: .0863*$width;
+                .coin-span {
+                    width: .0863*$width;
+                    img {
+                        width: .0863*$width;
+                    }
+                }
+            }
+            p.big-bolded {
+                font-size: .1163*$width;
+                width: 100%;
+                text-align: center;
+                font-weight: 700;
+                margin: 0;
+                .vic-span {
+                    width: .1163*$width;
+                    img {
+                        width: .1163*$width;
+                    }
+                }
+            }
+        }
+        .bottom-container {
+            .card-type {
+                font-size: 1.08/1.38*.0863*$width;
+                margin-bottom: .528/.928*.058*$width;
+            }
+        }
+        .content-container.cardcount-container .card-count 
+        {
+            font-size: .17*$width;
+            border: .0222*$width solid #ee0000;
+            border-radius: .04444*$width;
+        }
+        .coin-value {
+            font-size: .14*$width;
+        }
+        .picture {
+            top: .19*$width;
+        }
+    }
+}
+.card-container.back {
+    .picture {
+        top: 0;
+    }
+}

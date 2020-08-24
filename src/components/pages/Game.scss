@@ -1,0 +1,547 @@
+.backdrop{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: url("/images/swamp-hag.jpg") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.endgame-container {
+    background: rgba(0,0,0,.8);
+    font-family: Arial;
+    color: white;
+    padding: 20px;
+    height: 100%;
+    .big {
+        font-size: 10vh;
+    }
+}
+
+button {
+    background: rgba(0,0,0,.8);
+    color: white;
+    border: 2px solid white;
+    font-family: DomFont;
+    padding: 10px;
+}
+
+button:hover {
+    cursor: pointer;
+    background: rgba(0,0,0,1);
+    border: 2px solid black;
+}
+button:disabled,button[disabled]
+{
+    border: 1px solid #999999;
+    background-color: #888888;
+    color: #666666;
+}
+
+
+
+.modal, .passage, .wish, .patrol, .sentry {
+    background: rgba(0,0,0,.8);
+    position: absolute;
+    top: 20%;
+    z-index: 1;
+    padding: 30px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    button {
+        margin: 5px;
+    }
+    font-family: DomFont;
+}
+
+.display-container {
+    background: rgba(0,0,0,.8);
+    position: absolute;
+    top: 20%;
+    z-index: 1;
+    padding: 30px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 56%;
+    height: 30%;
+    .display-buttons {
+        position: absolute;
+        bottom: 1%;
+        button {
+            margin: 5px;
+            margin-top: 30%;
+        }
+        z-index: -1;
+    } 
+    .hand {
+        display: flex;
+        flex-flow: row wrap;
+        padding: 5px 0;
+        position: absolute;            
+        @for $i from 1 through 5 {
+            .card-container:nth-child(#{$i}) {
+                transform: translate(10.3vw * ($i - 1));
+            }
+        }
+    }
+    .hand.c6 {
+        $n: 6;
+        $gap: (9.33vw * 5)/($n - 1);
+        @for $i from 1 through $n {
+            .card-container:nth-child(#{$i}) {
+                transform: translate($gap * ($i - 1));
+            }
+        }   
+    }
+    .hand.c7 {
+        $n: 7;
+        $gap: (9.33vw * 5)/($n - 1);
+        @for $i from 1 through $n {
+            .card-container:nth-child(#{$i}) {
+                transform: translate($gap * ($i - 1));
+            }
+        }    
+    }
+    .hand.c8 {
+        $n: 8;
+        $gap: (9.33vw * 5)/($n - 1);
+        @for $i from 1 through $n {
+            .card-container:nth-child(#{$i}) {
+                transform: translate($gap * ($i - 1));
+            }
+        }   
+    }
+    .hand.c9 {
+        $n: 9;
+        $gap: (9.33vw * 5)/($n - 1);
+        @for $i from 1 through $n {
+            .card-container:nth-child(#{$i}) {
+                transform: translate($gap * ($i - 1));
+            }
+        }     
+    }
+    .hand.c10 {
+        $n: 10;
+        $gap: (9.33vw * 5)/($n - 1);
+        @for $i from 1 through $n {
+            .card-container:nth-child(#{$i}) {
+                transform: translate($gap * ($i - 1));
+            }
+        }    
+    }
+    .hand.c11 {
+        $n: 11;
+        $gap: (9.33vw * 5)/($n - 1);
+        @for $i from 1 through $n {
+            .card-container:nth-child(#{$i}) {
+                transform: translate($gap * ($i - 1));
+            }
+        }     
+    }
+    .hand.c12 {
+        $n: 12;
+        $gap: (9.33vw * 5)/($n - 1);
+        @for $i from 1 through $n {
+            .card-container:nth-child(#{$i}) {
+                transform: translate($gap * ($i - 1));
+            }
+        }   
+    }
+    .hand.c13 {
+        $n: 13;
+        $gap: (9.33vw * 5)/($n - 1);
+        @for $i from 1 through $n {
+            .card-container:nth-child(#{$i}) {
+                transform: translate($gap * ($i - 1));
+            }
+        }     
+    }
+}
+.game-container {
+    display: flex;
+    height: 100%;
+    .col-left {
+        width: 14vw;
+        // display: flex;
+        // flex-flow: row wrap;
+        // justify-content: space-between;
+        // border: 1px solid red;
+        .sidecards {
+            display: flex;
+            flex-flow: row wrap;
+            // justify-content: flex-start;
+        }
+
+        .deck {
+            // height: 100%;
+
+            display: flex;
+            flex-flow: row wrap;
+            bottom: 10px;
+            padding: 5px 0;
+            width: 14vw;
+            font-size: 2vw;
+            position: absolute;
+            .numVPs {
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                display: flex;
+                width: 12vw;
+                margin: 0 1vw 10vh 1vw;
+                background: rgba(0,0,0,.8);
+                border-radius:5px;
+                color: white;
+                span {
+                    margin-left: 5px;
+
+                    border-radius:5px;
+                    color: lightgreen;
+                }
+            }
+            .cards {
+                display: flex;
+                flex-flow: row wrap;
+            }
+        }
+    }
+    .col-center {
+        width: 56vw;
+        height: 100%;
+        // border: 1px solid red;
+        font-family: DomFont;
+        .opponents {
+            .numOVPs {
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                display: flex;
+                width: 12vw;
+                margin: 0 1vw 0 1vw;
+                background: rgba(0,0,0,.8);
+                border-radius:5px;
+                color: white;
+                span {
+                    margin-left: 5px;
+                    border-radius:5px;
+                    color: lightgreen;
+                }
+            }
+        }
+        .kingdom {
+            display: flex;
+            align-items: center;
+            flex-flow: row wrap-reverse;
+        }
+        .kingdom-display {
+            display: flex;
+            align-items: center;
+            flex-flow: row wrap-reverse;
+        }
+        .hand {
+            display: flex;
+            flex-flow: row wrap;
+            bottom: 30vh;
+            padding: 5px 0;
+            position: absolute;            
+            @for $i from 1 through 5 {
+                .card-container:nth-child(#{$i}) {
+                    transform: translate(10.3vw * ($i - 1));
+                }
+            }
+        }
+        .hand.c6 {
+            $n: 6;
+            $gap: (9.33vw * 5)/($n - 1);
+            @for $i from 1 through $n {
+                .card-container:nth-child(#{$i}) {
+                    transform: translate($gap * ($i - 1));
+                }
+            }   
+        }
+        .hand.c7 {
+            $n: 7;
+            $gap: (9.33vw * 5)/($n - 1);
+            @for $i from 1 through $n {
+                .card-container:nth-child(#{$i}) {
+                    transform: translate($gap * ($i - 1));
+                }
+            }    
+        }
+        .hand.c8 {
+            $n: 8;
+            $gap: (9.33vw * 5)/($n - 1);
+            @for $i from 1 through $n {
+                .card-container:nth-child(#{$i}) {
+                    transform: translate($gap * ($i - 1));
+                }
+            }   
+        }
+        .hand.c9 {
+            $n: 9;
+            $gap: (9.33vw * 5)/($n - 1);
+            @for $i from 1 through $n {
+                .card-container:nth-child(#{$i}) {
+                    transform: translate($gap * ($i - 1));
+                }
+            }     
+        }
+        .hand.c10 {
+            $n: 10;
+            $gap: (9.33vw * 5)/($n - 1);
+            @for $i from 1 through $n {
+                .card-container:nth-child(#{$i}) {
+                    transform: translate($gap * ($i - 1));
+                }
+            }    
+        }
+        .hand.c11 {
+            $n: 11;
+            $gap: (9.33vw * 5)/($n - 1);
+            @for $i from 1 through $n {
+                .card-container:nth-child(#{$i}) {
+                    transform: translate($gap * ($i - 1));
+                }
+            }     
+        }
+        .hand.c12 {
+            $n: 12;
+            $gap: (9.33vw * 5)/($n - 1);
+            @for $i from 1 through $n {
+                .card-container:nth-child(#{$i}) {
+                    transform: translate($gap * ($i - 1));
+                }
+            }   
+        }
+        .hand.c13 {
+            $n: 13;
+            $gap: (9.33vw * 5)/($n - 1);
+            @for $i from 1 through $n {
+                .card-container:nth-child(#{$i}) {
+                    transform: translate($gap * ($i - 1));
+                }
+            }     
+        }
+
+        .played.hand {
+            display: flex;
+            flex-flow: row wrap;
+            bottom: 30vh;
+            padding: 5px 0;
+            position: absolute;            
+            @for $i from 1 through 5 {
+                .card-container:nth-child(#{$i}) {
+                    transform: translate(7.9vw * ($i - 1));
+                }
+            }
+        }
+        .played.hand.c6 {
+            $n: 6;
+            $gap: (6.1vw * 5)/($n - 1);
+            @for $i from 1 through $n {
+                .card-container:nth-child(#{$i}) {
+                    transform: translate($gap * ($i - 1));
+                }
+            }   
+        }
+        .played.hand.c7 {
+            $n: 7;
+            $gap: (6.1vw * 5)/($n - 1);
+            @for $i from 1 through $n {
+                .card-container:nth-child(#{$i}) {
+                    transform: translate($gap * ($i - 1));
+                }
+            }    
+        }
+        .played.hand.c8 {
+            $n: 8;
+            $gap: (6.1vw * 5)/($n - 1);
+            @for $i from 1 through $n {
+                .card-container:nth-child(#{$i}) {
+                    transform: translate($gap * ($i - 1));
+                }
+            }   
+        }
+        .played.hand.c9 {
+            $n: 9;
+            $gap: (6.1vw * 5)/($n - 1);
+            @for $i from 1 through $n {
+                .card-container:nth-child(#{$i}) {
+                    transform: translate($gap * ($i - 1));
+                }
+            }     
+        }
+        .played.hand.c10 {
+            $n: 10;
+            $gap: (6.1vw * 5)/($n - 1);
+            @for $i from 1 through $n {
+                .card-container:nth-child(#{$i}) {
+                    transform: translate($gap * ($i - 1));
+                }
+            }    
+        }
+        .played.hand.c11 {
+            $n: 11;
+            $gap: (6.1vw * 5)/($n - 1);
+            @for $i from 1 through $n {
+                .card-container:nth-child(#{$i}) {
+                    transform: translate($gap * ($i - 1));
+                }
+            }     
+        }
+        .played.hand.c12 {
+            $n: 12;
+            $gap: (6.1vw * 5)/($n - 1);
+            @for $i from 1 through $n {
+                .card-container:nth-child(#{$i}) {
+                    transform: translate($gap * ($i - 1));
+                }
+            }   
+        }
+        .played.hand.c13 {
+            $n: 13;
+            $gap: (6.1vw * 5)/($n - 1);
+            @for $i from 1 through $n {
+                .card-container:nth-child(#{$i}) {
+                    transform: translate($gap * ($i - 1));
+                }
+            }     
+        }
+        .stats {
+            background: rgba(0,0,0,.8);
+            padding: 10px;
+            border-radius: 10px;
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-between;
+            .line1 {
+                font-size: 2vw;
+                color: white;
+                top: 0;
+                img {
+                    width: 2vw;
+                }
+            }
+            .right {
+                font-size: 2vw;
+                color: white;
+                float: right;
+            }
+            .line2 {
+                font-size: 2vw;
+                color: #7393d9;
+                bottom: 0;
+                span {
+                    margin-left: 5px;
+                }
+            }
+        }
+        .played.hand {
+            position: relative;
+            top: 0;
+        }
+    }
+    .col-right {
+        width: 30vw;
+        height: 100%;
+        // border: 1px solid red;
+        background: rgba(0,0,0,.8);
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+        .top-options {
+            height: 10%;
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-evenly;
+            .tab {
+                margin: 0;
+                :hover {
+                    cursor:pointer;
+                }
+            }
+        }
+        .logtrash {
+            height: 50%;
+            .logs {
+                overflow-y:auto;
+                max-height: 90%;
+                width: 100%;
+                display: flex;
+                flex-direction: column-reverse;
+                .log {
+                    margin: 0;
+                }    
+            }
+        }
+        .chat {
+            
+            height: 30%;
+            padding: 9% 10% 7% 10%;
+            width: 80%;
+            display: flex;
+            flex-flow: column wrap;
+            justify-content: space-between;
+            .messages {
+                overflow-y:auto;
+                max-height: 80%;
+                width: 100%;
+                display: flex;
+                flex-direction: column-reverse;
+                .message {
+                    margin: 0;
+                }
+            }
+
+            .inp {
+                width: 100%;
+            }
+
+            .filter-toggle {
+                cursor:pointer;
+                font-style: italic;
+                margin: 0;
+            }
+        }
+    }
+}
+
+.color0 {
+    color: yellow;
+}
+.color1 {
+    color: red;
+}
+.color2 {
+    color: green;
+}
+.color3 {
+    color: blue;
+}
+.green {
+    color: lightgreen;
+}
+.normal {
+    color: #aaaaaa;
+}
+.white {
+    color: white;
+    font-weight: 700;
+}
+.gold {
+    color: gold;
+}
+.curse {
+    color: purple;
+}
+.indent {
+    text-indent: 10%;
+}
+
+
+@font-face {
+    font-family: DomFont;
+    src: url("/fonts/TrajanPro-Bold.otf") format("opentype");
+}
+
+// * {
+// }

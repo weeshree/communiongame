@@ -1,0 +1,36 @@
+.backdrop-waiting{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: url("/images/communion.jpg") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+
+.container-waiting {
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 10vh;
+    width: 30%;
+    padding: 10%;
+    background: rgba(8*16+7,12*16+14, 14*16+11, .8);
+    font-size: 5vw;
+    font-family: Arial;
+}
+.container-waiting button {
+    font-size: 5vw;
+}
+
+@font-face {
+    font-family: DomFont;
+    src: url("/fonts/TrajanPro-Bold.otf") format("opentype");
+}
+
+label, button {
+    font-family: DomFont;
+}
